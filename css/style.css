@@ -133,3 +133,32 @@ body.home .bottom-nav a[aria-current="page"]{opacity:100;}
     height: 220px;
   }
 }
+
+/* --- Mobile layout fix for hero + menu --- */
+@media (max-width: 768px) {
+
+  /* Resize the big name */
+  .overlay .name {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+    line-height: 1.1;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  /* Move the overlay higher so nav fits */
+  .overlay {
+    top: 35%;                  /* was probably 50% */
+    transform: translateY(-30%);
+  }
+
+  /* Make bottom nav more compact */
+  .bottom-nav {
+    padding: 0.7rem 0 1.2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.07em;
+  }
+
+  .bottom-nav a {
+    margin: 0 0.6rem;           /* closer spacing */
+  }
+}
