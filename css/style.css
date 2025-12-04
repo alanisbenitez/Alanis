@@ -134,10 +134,39 @@ body.home .bottom-nav a[aria-current="page"]{opacity:100;}
   }
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Footer always on top of the video, stuck to bottom */
+footer {
+  position: fixed;
+  bottom: env(safe-area-inset-bottom, 0); /* respects iPhone safe area */
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;          /* space between links */
+  padding: 0.8rem 1rem 1.2rem;
+  background: transparent; /* keep video visible behind */
+}
+
+.bottom-nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+}
+
 /* --- Mobile layout fix for hero + menu --- */
 @media (max-width: 768px) {
 
-  /* Resize the big name */
   .overlay .name {
     font-size: clamp(2.2rem, 10vw, 3.2rem);
     line-height: 1.1;
@@ -145,20 +174,28 @@ body.home .bottom-nav a[aria-current="page"]{opacity:100;}
     padding: 0 1rem;
   }
 
-  /* Move the overlay higher so nav fits */
   .overlay {
-    top: 35%;                  /* was probably 50% */
-    transform: translateY(-30%);
+    top: 35%;
+    transform: translate(-50%, -30%);
   }
 
-  /* Make bottom nav more compact */
   .bottom-nav {
-    padding: 0.7rem 0 1.2rem;
-    font-size: 0.9rem;
-    letter-spacing: 0.07em;
+    gap: 1rem;
+    padding: 0.5rem 0.8rem calc(env(safe-area-inset-bottom, 0px) + 0.7rem);
   }
 
   .bottom-nav a {
-    margin: 0 0.6rem;           /* closer spacing */
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
   }
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills the screen, crops edges instead of stretching */
+  z-index: -1;         /* sits behind text + nav */
 }
