@@ -164,6 +164,51 @@ footer {
   letter-spacing: 0.12em;
 }
 
+/* ==============================
+   TABLET VIEWPORT
+   ============================== */
+@media (min-width: 761px) and (max-width: 1024px) {
+
+  /* Containers feel less wide than desktop */
+  .container {
+    max-width: 90%;
+    padding: 32px 28px;
+  }
+
+  /* Projects page: tighter two-column layout */
+  .project {
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+  }
+
+  .thumb {
+    height: 220px;
+  }
+
+  /* About page: better reading width */
+  body.about .about-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  body.about .about-photo {
+    max-width: 65%;
+    margin: 0 auto 2rem;
+  }
+
+  /* Home page: adjust hero name for tablets */
+  body.home .overlay .name {
+    font-size: clamp(4rem, 8vw, 6rem);
+  }
+
+  /* Footer/nav spacing */
+  .bottom-nav {
+    gap: 1.5rem;
+    padding: 0.7rem 1.2rem calc(0.9rem + env(safe-area-inset-bottom));
+  }
+}
+
 /* --- Mobile layout fix for hero + menu --- */
 @media (max-width: 768px) {
 
