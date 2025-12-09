@@ -164,51 +164,6 @@ footer {
   letter-spacing: 0.12em;
 }
 
-/* ==============================
-   TABLET VIEWPORT
-   ============================== */
-@media (min-width: 761px) and (max-width: 1024px) {
-
-  /* Containers feel less wide than desktop */
-  .container {
-    max-width: 90%;
-    padding: 32px 28px;
-  }
-
-  /* Projects page: tighter two-column layout */
-  .project {
-    grid-template-columns: 280px 1fr;
-    gap: 1.5rem;
-  }
-
-  .thumb {
-    height: 220px;
-  }
-
-  /* About page: better reading width */
-  body.about .about-content {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  body.about .about-photo {
-    max-width: 65%;
-    margin: 0 auto 2rem;
-  }
-
-  /* Home page: adjust hero name for tablets */
-  body.home .overlay .name {
-    font-size: clamp(4rem, 8vw, 6rem);
-  }
-
-  /* Footer/nav spacing */
-  .bottom-nav {
-    gap: 1.5rem;
-    padding: 0.7rem 1.2rem calc(0.9rem + env(safe-area-inset-bottom));
-  }
-}
-
 /* --- Mobile layout fix for hero + menu --- */
 @media (max-width: 768px) {
 
@@ -248,4 +203,58 @@ footer {
   height: 100%;
   object-fit: cover;   /* fills the screen, crops edges instead of stretching */
   z-index: -1;         /* sits behind text + nav */
+}
+
+/* ==========================
+   TABLET VIEWPORT (768–1024)
+   ========================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ===== ABOUT PAGE ===== */
+  body.about .about-section {
+    max-width: 820px;
+    margin: 60px auto 80px;
+    padding: 0 32px;
+  }
+
+  body.about .about-photo {
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+
+  body.about .about-photo img {
+    width: 100%;
+    height: auto;
+  }
+
+  body.about .about-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: left;
+  }
+
+  /* ===== CONTACT PAGE ===== */
+  body.contact .contact-hero {
+    min-height: auto;
+    padding: 80px 0 40px;
+  }
+
+  body.contact .contact-hero h1 {
+    transform: none;
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 32px;
+  }
+
+  body.contact .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
+  }
+
+  body.contact .contact-icons a {
+    transform: none;
+  }
 }
