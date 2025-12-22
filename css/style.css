@@ -141,7 +141,7 @@ html, body {
 }
 
 /* Footer always on top of the video, stuck to bottom */
-footer {
+body.home footer {
   position: fixed;
   bottom: env(safe-area-inset-bottom, 0); /* respects iPhone safe area */
   left: 0;
