@@ -227,13 +227,6 @@ footer {
 @media (min-width: 769px) and (max-width: 1024px) {
 
   /* ABOUT PAGE — tablet fix */
-  body.about footer {
-    position: static; /* stop fixed footer causing fake space */
-  }
-
-  body.about {
-    padding-bottom: 0;
-  }
 
   body.about .about-section {
     max-width: 720px;
