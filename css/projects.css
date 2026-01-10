@@ -12,7 +12,7 @@ body.projects .overlay {
 }
 
 /* --- Layout --- */
-.projects {
+.projects.list {
   display: grid;
   gap: var(--gap, 24px);
 }
